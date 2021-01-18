@@ -1,13 +1,16 @@
 package client;
 
+
 import java.io.*;
 import java.net.*;
 import java.util.*;
 
+
+
 public class ServerThread implements Runnable {
     private Socket socket;
     private String userName;
-    private boolean isAlived;
+    private boolean isAlive;
     private final LinkedList<String> messagesToSend = new LinkedList<String>();
     private boolean hasMessages = false;
 
@@ -20,8 +23,12 @@ public class ServerThread implements Runnable {
         synchronized (messagesToSend){
             hasMessages = true;
             messagesToSend.push(message);
+
         }
     }
+
+
+
 
     @Override
     public void run(){
@@ -34,6 +41,8 @@ public class ServerThread implements Runnable {
             PrintWriter serverOut = new PrintWriter(socket.getOutputStream(), false);
             InputStream serverInStream = socket.getInputStream();
             Scanner serverIn = new Scanner(serverInStream);
+
+
             // BufferedReader userBr = new BufferedReader(new InputStreamReader(userInStream));
             // Scanner userIn = new Scanner(userInStream);
 
