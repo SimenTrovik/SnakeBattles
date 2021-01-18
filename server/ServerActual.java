@@ -52,7 +52,7 @@ public class ServerActual {
                 System.out.println("Client connected!");
 
                 ClientThread client = new ClientThread(this, socket);
-                Thread thread = new Thread(String.valueOf(client));
+                Thread thread = new Thread(client);
                 thread.start();
                 clients.add(client);
 

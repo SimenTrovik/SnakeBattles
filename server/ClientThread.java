@@ -2,7 +2,7 @@ import java.net.*;
 import java.io.*;
 import java.util.Scanner;
 
-public class ClientThread {
+public class ClientThread implements Runnable {
 
     private Socket socket;
     private ServerActual server;
@@ -17,7 +17,7 @@ public class ClientThread {
         return clientOut;
     }
 
-    //@Override
+    @Override
     public void run() {
         try{
             // setup
