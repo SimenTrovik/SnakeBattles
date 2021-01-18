@@ -24,17 +24,20 @@ public class ServerPanel extends JPanel {
         topBtnsPanel.add(stopBtn);
 
         this.add(topBtnsPanel);
-
-        server = new ServerActual();
     }
 
     private void startServer() {
         System.out.println("Starting server!");
-        server.start();
+        server = new ServerActual();
+        Thread th = new Thread(server);
+        th.start();
     }
 
     private void stopServer() {
         System.out.println("Stopping server!");
-        server.stop();
+        if (server != null) {
+            server.stop();
+        }
+        server = null;
     }
 }
