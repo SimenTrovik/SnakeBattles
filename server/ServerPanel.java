@@ -9,7 +9,6 @@ public class ServerPanel extends JPanel {
     ServerPanel() {
         this.setPreferredSize(new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT));
         this.setFocusable(true);
-        this.setBackground(Color.black);
 
         JPanel topBtnsPanel = new JPanel();
         topBtnsPanel.setLayout(new BoxLayout(topBtnsPanel, BoxLayout.LINE_AXIS));
